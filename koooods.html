@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>yurrr</title>
+</head>
+<body>
+
+<h2>calculator but with input fields</h2>
+
+<div>
+    <input type="number" id="value1" placeholder="First Number">
+    +
+    <input type="number" id="value2" placeholder="Second Number">
+    <button id="Addition">=</button>
+    <span id="sumResult"></span>
+</div>
+<div>
+    <input type="number" id="value3" placeholder="First Number">
+    -
+    <input type="number" id="value4" placeholder="Second Number">
+    <button id="Subtraction">=</button>
+    <span id="differenceResult"></span>
+</div>
+<div>
+    <input type="number" id="value5" placeholder="First Number">
+    ×
+    <input type="number" id="value6" placeholder="Second Number">
+    <button id="Multiplication">=</button>
+    <span id="productResult"></span>
+</div>
+<div>
+    <input type="number" id="value7" placeholder="First Number">
+    ÷
+    <input type="number" id="value8" placeholder="Second Number">
+    <button id="Division">=</button>
+    <span id="quotientResult"></span>
+</div>
+
+<script>
+    function performCalculations() {
+        const n1 = parseFloat(document.getElementById('value1').value) || 0;
+        const n2 = parseFloat(document.getElementById('value2').value) || 0;
+        document.getElementById('sumResult').innerText = n1 + n2;
+    }
+    function performSub(){
+        const n3 = parseFloat(document.getElementById('value3').value) || 0;
+        const n4 = parseFloat(document.getElementById('value4').value) || 0;
+        document.getElementById('differenceResult').innerText = n3 - n4;
+    }
+    function performMul(){
+        const n5 = parseFloat(document.getElementById('value5').value) || 0;
+        const n6 = parseFloat(document.getElementById('value6').value) || 0;
+        document.getElementById('productResult').innerText = n5 * n6;
+    }
+    function performDiv(){
+        const n7 = parseFloat(document.getElementById('value7').value) || 0;
+        const n8 = parseFloat(document.getElementById('value8').value) || 0;
+        document.getElementById('quotientResult').innerText = n8 !== 0 ? n7 / n8 : 'Undefined';
+    }
+
+   document.getElementById('Addition').addEventListener('click', performCalculations);
+   document.getElementById('Subtraction').addEventListener('click', performSub);
+   document.getElementById('Multiplication').addEventListener('click', performMul);
+   document.getElementById('Division').addEventListener('click', performDiv);
+</script>
+
+</body>
+</html>
